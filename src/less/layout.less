@@ -1,0 +1,88 @@
+body {
+	font-family: 'Work Sans', sans-serif;
+	font-size: 16px;
+	overflow: hidden;
+}
+#toggle {
+	display: none;
+	&:checked~main {
+		.bar {
+			opacity: 0;
+			transition: opacity 0.5s ease;
+		}
+		.content-block {
+			left: 275px;
+		}
+		.support {
+			border-radius: 0 120px 0 0;
+			left: 275px;
+			transition: left 0.3s ease-in;
+		}
+	}
+}
+.bar {
+	background-color: @basecolor;
+	display: @flex;
+	height: @height0;
+	justify-content: center;
+	left: 0;
+	position: fixed;
+	width: 137px;
+}
+.exit {
+	color: @cyanColor;
+	cursor: pointer;
+	float: right;
+	font-size: 35px;
+	left: -25px;
+	position: relative;
+	top: 25px;
+	z-index: 2;
+}
+.main-block {
+	background-attachment: fixed;
+	background-image: url('../img/back.jpg');
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	.content-block {
+		height: @height0;
+		position: relative;
+		width: 100vw;
+	}
+	.support {
+		align-items: center;
+		background-color: @whiteColor;
+		border-radius: 0 120px 0 0;
+		bottom: 0;
+		display: @flex;
+		left: 137px;
+		position: fixed;
+		transition: left 0.25s ease-out;
+		width: 400px;
+	}
+}
+.support {
+	.support-img {
+		align-self: flex-end;
+	}
+	.support-list {
+		.support-item {
+			&:nth-child(1) {
+				font-size: 1.5rem;
+				padding-bottom: 20px;
+			}
+		}
+		.support-link {
+			color: @linkColor;
+			font-weight: 200;
+		}
+	}
+}
+.button {
+	color: @cyanColor;
+	cursor: pointer;
+	font-size: 35px;
+	position: absolute;
+	top: 25px;
+}
